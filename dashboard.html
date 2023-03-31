@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>User Dashboard</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink bg-white shadow fw-bolder">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="login.html">Home</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href='#' >Account</a></li>
+                        <li class="nav-item"><a class="nav-link" href='login.html' >Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href='signup.html' >Sign Up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class='d-flex justify-content-center'>
+                    <div class='col-12 col-lg-6 col-md-6'>
+                        <h3 class='text-muted mb-2'> Dashboard </h3>
+                        <!-- Bordered Tabs -->
+                          <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Bot</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Knowledge Base</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Credentials</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content pt-2" id="borderedTabContent">
+                            <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class='text-center mb-3'>
+                                    <img src='assets/img/botimage.jpg' class='rounded-circle d-block mx-auto mb-2 border-2' style='width: 200px; height: 200px' />
+                                    <div class='d-flex justify-content-center my-2'>
+                                        <div><span class='badge bg-primary'><i class='bi bi-person-fill text-white me-1'></i> Friendly </span></div>
+                                        <div class='ms-1'><span class='badge bg-success'><i class='bi bi-plug-fill me-1'></i> Fast </span></div>
+                                        <div><span class='badge bg-warning mx-1'><i class='bi bi-hand-thumbs-up-fill me-1'></i> Reliable </span></div>
+                                        <div><span class='badge bg-info'><i class='bi bi-grid-fill me-1'></i> Brilliant </span></div>
+
+                                    </div>
+                                </div>
+
+                              <p class='mb-2 text-muted'> Colosal bots is a simple friendly, fast, reliable and brilliant bot created to serve
+                                as a orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
+
+                            <div class='p-3 shadow-sm my-4'>
+                                <div id="donutChart"></div>
+                            </div>
+                              <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                  new ApexCharts(document.querySelector("#donutChart"), {
+                                    series: [12, 55, 13, 43, 22, 14, 32, 100, 32, 10, 32, 11],
+                                    chart: {
+                                        title: 'Chart Rates',
+                                      height: 350,
+                                      type: 'donut',
+                                      toolbar: {
+                                        show: true
+                                      }
+                                    },
+                                    labels: ['January', 'February', 'Match', 'April', 'May','June','July','August','September','October','November','December'],
+                                  }).render();
+                                });
+                              </script>
+                              <!-- End Donut Chart -->
+
+                              <div class='p-3 shadow my-2'>
+                                <div id="barChart"></div>
+                            </div>
+
+                              <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                  new ApexCharts(document.querySelector("#barChart"), {
+                                    series: [{
+                                      data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+                                    }],
+                                    chart: {
+                                      type: 'bar',
+                                      height: 350
+                                    },
+                                    plotOptions: {
+                                      bar: {
+                                        borderRadius: 4,
+                                        horizontal: true,
+                                      }
+                                    },
+                                    dataLabels: {
+                                      enabled: false
+                                    },
+                                    xaxis: {
+                                      categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
+                                        'United States', 'China', 'Germany'
+                                      ],
+                                    }
+                                  }).render();
+                                });
+                              </script>
+
+                            </div>
+                            <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
+                              <label class='mb-2 text-muted'> Document:</label>
+                              <input type='file' class='form-control mb-3' disabled="">
+
+                              <h3 class='mb-2'> Content </h3>
+                              <div class='bg-light p-5'>
+                                  <p class='border-bottom mb-2 shadow-sm bg-white text-muted p-3 rounded'> 
+                                    <span class='mb-2 d-block fs-md fw-bolder'> How business objectives </span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                    <p class='border-bottom mb-2 shadow-sm bg-white text-muted p-3 rounded'> 
+                                    <span class='mb-2 d-block fs-md fw-bolder'> How we recruite new clients </span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                    <p class='border-bottom mb-2 shadow-sm bg-white text-muted p-3 rounded'> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                                    <p class='border-bottom mb-2 shadow-sm bg-white text-muted p-3 rounded'> 
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+
+                              </div>
+
+                              <button class='btn form-control btn-secondary mt-5'> Save </button>
+                            </div>
+                            <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
+                              <p class='text-muted text-sm mb-2'> This is the link which you are to copy and paste on your website. </p>
+                                <div class='p-3 bg-light'>
+                                
+                                &lt;script src='https://www.ourwebsiteline.com?yourbotusername=1234'&gt;&lt;/script&gt;
+                                </div>
+
+                            </div>
+                          </div><!-- End Bordered Tabs -->
+                        
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </section>
+        
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Company Name</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <!--<script src="js/scripts.js"></script>-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="assets/apexcharts/apexcharts.min.js"></script>
+    </body>
+</html>
